@@ -1,0 +1,6 @@
+:host {
+    --color_blue: rgb(66, 135, 175);
+    --color_light-grey: #dcd7d7;
+    --color_black: rgb(14, 14, 14);
+    --color_white: rgba(255, 255, 255, 0.971);
+}

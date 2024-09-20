@@ -1,0 +1,23 @@
+<template>
+    <c-error-modal error-message={errorMessage}></c-error-modal>
+    <c-spinner show-spinner={showSpinner}></c-spinner>
+    <c-modal-base>
+        <div slot="headercontent">
+            Create Savings Account
+        </div>
+        <div slot="bodycontent">
+            <div class="slds-m-bottom_x-small">
+                <c-labeled-field data-id="Name" label={label.savingsAccountName} is-editable={isEditable}
+                    validation-type="required" class="slds-m-bottom_x-small"></c-labeled-field>
+            </div>
+            <c-labeled-field data-id="Balance" label={label.savingsCurrentBalance} is-editable={isEditable}
+                validation-type="number" is-currency></c-labeled-field>
+        </div>
+        <div slot="footercontent">
+            <lightning-button class="slds-m-right_x-small" disable-animation label="Close" variant="brand"
+                onclick={closeModal}></lightning-button>
+            <lightning-button variant="brand" label="Save" onclick={handleSave}
+                class="slds-m-left_x-small"></lightning-button>
+        </div>
+    </c-modal-base>
+</template>

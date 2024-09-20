@@ -1,0 +1,124 @@
+@import 'c/styleTokens';
+
+.background-blue {
+    background-color: var(--color_blue);
+}
+
+.text_bolder {
+    font-weight: bolder;
+}
+
+.text_bold {
+    font-weight: bold;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: var(--lwc-borderRadiusMedium);
+}
+
+.card-base {
+  border-radius: var(--lwc-borderRadiusMedium);
+  border-color: var(--color_light-grey);
+  border-style: solid;
+  border-width: 1px;
+  box-shadow: 0px 2px 5px var(--color_light-grey);
+}
+
+.title {
+  font-weight: bold;
+}
+
+.body {
+  border-radius: var(--lwc-borderRadiusMedium);
+}
+
+.variant-grey-header {
+  background-color: var(--color_light-grey);
+  border-radius: var(--lwc-borderRadiusMedium);
+}
+
+.variant-white-body {
+  background-color: var(--color_white);
+}
+
+.variant-grey-body {
+  background-color: var(--color_light-grey);
+  border-radius: var(--lwc-borderRadiusMedium);
+}
+
+.header-content slot {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.header-buttons-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.card-footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.centered-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.right-aligned-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.modal-header {
+  --slds-c-modal-header-color-background: var(--color_white);
+  font-weight: bold;
+  border-bottom: transparent;
+}
+
+.slds-modal__container {
+  width: fit-content;
+  min-width: 25rem !important;
+  max-width: 40rem !important;
+}
+
+.slds-modal__header {
+  border: 0 transparent !important;
+  height: fit-content;
+  margin: 0px;
+}
+.slds-modal__footer {
+  border-top: 0 transparent !important;
+  height: fit-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin: 0px;
+}
+
+.modal-content {
+  --slds-c-modal-content-color-background: var(--color_white);
+  border-bottom: transparent;
+  margin: 0px;
+  height: fit-content;
+}
+
+.modal-footer {
+  --slds-c-modal-footer-color-background: var(--color_white);
+  border-bottom: transparent;
+}
+
+.slds-spinner_container{
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.slds-form-element {
+    margin-bottom: 0px;
+}
+

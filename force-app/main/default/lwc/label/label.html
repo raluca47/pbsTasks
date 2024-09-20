@@ -1,0 +1,10 @@
+<template>
+    <div class={styleClasses}>
+        <div class="slds-align-middle slds-grow">
+            <slot></slot>
+            <template if:true={required}>
+                <span class="slds-text-color_destructive">*</span>
+            </template>
+        </div>
+    </div>
+</template>

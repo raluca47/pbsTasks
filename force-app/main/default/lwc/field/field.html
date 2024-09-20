@@ -1,0 +1,19 @@
+<template>
+    <template if:true={edit}>
+        <lightning-input name={name} value={value} type={type} label="no-label" placeholder={placeholder}
+            variant="label-hidden" data-id={inputId} required={required} onchange={handleChange} pattern={pattern}
+            max-length={maxLength} date-style="short" disabled={disabled} step={typeAttributes.step}
+            formatter={formatter}></lightning-input>
+    </template>
+    <template if:false={edit}>
+        <template lwc:if={isCurrency}>
+            <lightning-formatted-number value={value} data-id={inputId} format-style="currency"
+                currency-code={typeAttributes.currencyIsoCode}></lightning-formatted-number>
+        </template>
+        <template lwc:else>
+            <div data-id={inputId} data-value={value}>
+                {displayValue}
+            </div>
+        </template>
+    </template>
+</template>

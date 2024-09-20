@@ -1,0 +1,28 @@
+<template>
+    <template if:true={showModal}>
+        <section class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <slot name="modalContent">
+                    <div class="modal-header slds-modal__header slds-text-heading_small">
+                        <slot name="headercontent"></slot>
+                        <c-separator></c-separator>
+                    </div>
+                    <div
+                        class="modal-content slds-modal__content slds-m-around_none slds-p-horizontal_small slds-p-vertical_none slds-text-body_small">
+                        <div class=" slds-p-bottom_small slds-p-horizontal_small">
+                            <slot name="bodycontent">
+                            </slot>
+                        </div>
+                        <c-separator class="slds-m-horizontal_xx-small slds-p-vertical_none slds-m-around_none"
+                            color="var(--color_light-grey)"></c-separator>
+                    </div>
+                    <div class="modal-footer slds-modal__footer slds-p-around_medium">
+                        <slot name="footercontent">
+                        </slot>
+                    </div>
+                </slot>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

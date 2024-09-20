@@ -1,0 +1,19 @@
+<template>
+    <c-modal-base>
+        <div slot="headercontent">
+            {label.defaultHeader}
+        </div>
+        <div slot="bodycontent">
+            <template lwc:if={errorMessage}>
+                {errorMessage}
+            </template>
+            <template lwc:else>
+                {label.defaultBody}
+            </template>
+        </div>
+        <div slot="footercontent">
+            <lightning-button class="slds-m-right_x-small" disable-animation label="Close" variant="brand"
+                onclick={closeModal}></lightning-button>
+        </div>
+    </c-modal-base>
+</template>

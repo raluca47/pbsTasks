@@ -1,0 +1,48 @@
+<template>
+    <c-error-modal error-message={errorMessage}></c-error-modal>
+    <c-spinner show-spinner={showSpinner}></c-spinner>
+    <c-create-savings-account-modal is-editable oncreated={refreshData}></c-create-savings-account-modal>
+    <template lwc:if={savingsAccountData}>
+        <c-edit-savings-account-summary savings-account-data={savingsAccountData} is-editable onedited={refreshData}
+            show-spinner={showSpinner}></c-edit-savings-account-summary>
+    </template>
+    <c-card-base show-separator>
+        <div slot="title">
+            <c-label large-header> {label.savingsAccountTitle} </c-label>
+        </div>
+        <div slot="header-buttons">
+            <template lwc:if={isStatusActive}>
+                <lightning-button variant="brand" label="Edit" onclick={handleEdit}
+                    class="slds-m-left_x-small"></lightning-button>
+            </template>
+        </div>
+        <div slot="body">
+            <template lwc:if={savingsAccountData}>
+                <template lwc:if={isStatusActive}>
+                    <div class="summary slds-p-horizontal_small">
+                        <c-labeled-field data-id="Name" label={label.savingsAccountName} value={savingsAccountData.Name}
+                            is-editable={isEditable} validation-type="required"></c-labeled-field>
+                        <c-labeled-field data-id="Balance" label={label.savingsCurrentBalance}
+                            value={savingsAccountData.Current_Balance__c} is-editable={isEditable}
+                            validation-type="number" is-currency></c-labeled-field>
+                        <c-labeled-field data-id="Holder" label={label.savingsAccountHolder}
+                            value={accountHolderName}></c-labeled-field>
+                        <c-labeled-field data-id="CustomerNumber" label={label.savingsCustomerNumber}
+                            value={savingsAccountData.Customer_Number__c}></c-labeled-field>
+                        <c-labeled-field data-id="ProductCode" label={label.savingsProductCode}
+                            value={savingsAccountData.Product_Code__c}></c-labeled-field>
+                        <c-labeled-field data-id="Status" label={label.savingsAccountStatus}
+                            value={savingsAccountData.Status__c}></c-labeled-field>
+                    </div>
+                </template>
+                <template lwc:else>
+                    {notActiveMessage}
+                </template>
+            </template>
+            <template lwc:else>
+                <lightning-button variant="brand" label="Create Savings Account" onclick={handleNewAccount}
+                    class="slds-m-left_x-small"></lightning-button>
+            </template>
+        </div>
+    </c-card-base>
+</template>

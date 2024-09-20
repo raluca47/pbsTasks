@@ -1,0 +1,35 @@
+<template>
+    <div class="card-base slds-p-around_x-small">
+        <div class={variantHeader}>
+            <div class="card-header slds-p-around_x-small">
+                <div class="header-content">
+                    <div class="title slds-text-heading_medium">
+                        <slot name="title">
+                        </slot>
+                    </div>
+                    <div class="subtitle slds-text-heading_small">
+                        <slot name="subtitle"></slot>
+                    </div>
+                </div>
+                <div class="header-buttons-wrap slds-p-around_xx-small">
+                    <slot name="header-buttons">
+                    </slot>
+                </div>
+            </div>
+        </div>
+        <template lwc:if={showSeparator}>
+            <c-separator width="2px" color="var(--color_blue)"></c-separator>
+        </template>
+        <div class={variantBody}>
+            <div class="body slds-p-around_x-small">
+                <slot name="body"></slot>
+            </div>
+        </div>
+        <div class="card-footer slds-p-around_x-small">
+            <div class={footerButtonsAlignment}>
+                <slot name="footer-buttons">
+                </slot>
+            </div>
+        </div>
+    </div>
+</template>

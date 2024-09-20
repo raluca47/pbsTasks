@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2 slds-align-middle">
+            <c-label> {label} </c-label>
+        </div>
+        <div class="slds-col slds-size_1-of-2 slds-align-middle">
+            <c-field value={value} is-editable={isEditable} is-currency={isCurrency} onchanged={handleChange}
+                validation-type={validationType}></c-field>
+        </div>
+    </div>
+</template>
